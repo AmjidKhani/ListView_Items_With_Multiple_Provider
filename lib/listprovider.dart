@@ -10,4 +10,9 @@ class listprovider with ChangeNotifier
     fav.add(value);
     notifyListeners();
   }
+  void removeitems(int value)
+  {
+    fav.remove(value);
+    notifyListeners();
+  }
 }

@@ -10,8 +10,6 @@ class listingitems extends StatefulWidget {
 }
 
 class _listingitemsState extends State<listingitems> {
-
-
   @override
   Widget build(BuildContext context) {
     print("itembuil");
@@ -27,7 +25,15 @@ class _listingitemsState extends State<listingitems> {
                   builder: (context, value, child) {
                     return ListTile(
                       onTap: () {
-                        value.addItem(index);
+                        if(value.fav.contains(index))
+                        {
+                       value.removeitems(index);
+                        }
+                        else
+                        {
+                          value.addItem(index);
+                        }
+
                         },
                       title: Text('items $index'),
                       trailing: Icon(
